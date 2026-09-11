@@ -32,6 +32,7 @@
             administracionToolStripMenuItem = new ToolStripMenuItem();
             articulosToolStripMenuItem = new ToolStripMenuItem();
             marcasToolStripMenuItem = new ToolStripMenuItem();
+            categoriasToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             // 
             // administracionToolStripMenuItem
             // 
-            administracionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { articulosToolStripMenuItem, marcasToolStripMenuItem });
+            administracionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { articulosToolStripMenuItem, marcasToolStripMenuItem, categoriasToolStripMenuItem });
             administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             administracionToolStripMenuItem.Size = new Size(100, 20);
             administracionToolStripMenuItem.Text = "Administracion";
@@ -64,6 +65,13 @@
             marcasToolStripMenuItem.Size = new Size(180, 22);
             marcasToolStripMenuItem.Text = "Marcas";
             marcasToolStripMenuItem.Click += marcasToolStripMenuItem_Click;
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            categoriasToolStripMenuItem.Size = new Size(180, 22);
+            categoriasToolStripMenuItem.Text = "Categorias";
+            categoriasToolStripMenuItem.Click += categoriasToolStripMenuItem_Click;
             // 
             // frmPrincipal
             // 
@@ -86,5 +94,6 @@
         private ToolStripMenuItem administracionToolStripMenuItem;
         private ToolStripMenuItem articulosToolStripMenuItem;
         private ToolStripMenuItem marcasToolStripMenuItem;
+        private ToolStripMenuItem categoriasToolStripMenuItem;
     }
 }
