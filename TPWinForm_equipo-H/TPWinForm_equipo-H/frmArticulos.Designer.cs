@@ -28,12 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmArticulos";
+            lblTitulo = new Label();
+            dgvArticulos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
+            SuspendLayout();
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(2, 9);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(177, 25);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Listado de Artículos";
+            // 
+            // dgvArticulos
+            // 
+            dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArticulos.Location = new Point(28, 79);
+            dgvArticulos.MultiSelect = false;
+            dgvArticulos.Name = "dgvArticulos";
+            dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvArticulos.Size = new Size(240, 150);
+            dgvArticulos.TabIndex = 1;
+            // 
+            // frmArticulos
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgvArticulos);
+            Controls.Add(lblTitulo);
+            Name = "frmArticulos";
+            Text = "frmArticulos";
+            ((System.ComponentModel.ISupportInitialize)dgvArticulos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblTitulo;
+        private DataGridView dgvArticulos;
     }
 }
