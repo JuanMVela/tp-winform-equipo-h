@@ -6,5 +6,11 @@ namespace TPWinForm_equipo_H
         {
             InitializeComponent();
         }
+
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmArticulos ventana = new frmArticulos();
+            ventana.ShowDialog();
+        }
     }
 }

@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            menuStrip1 = new MenuStrip();
+            administracionToolStripMenuItem = new ToolStripMenuItem();
+            articulosToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { administracionToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // administracionToolStripMenuItem
+            // 
+            administracionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { articulosToolStripMenuItem });
+            administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
+            administracionToolStripMenuItem.Size = new Size(100, 20);
+            administracionToolStripMenuItem.Text = "Administracion";
+            // 
+            // articulosToolStripMenuItem
+            // 
+            articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            articulosToolStripMenuItem.Size = new Size(180, 22);
+            articulosToolStripMenuItem.Text = "Articulos";
+            articulosToolStripMenuItem.Click += articulosToolStripMenuItem_Click;
+            // 
+            // frmPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "frmPrincipal";
             Text = "Form1";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem administracionToolStripMenuItem;
+        private ToolStripMenuItem articulosToolStripMenuItem;
     }
 }
