@@ -24,5 +24,10 @@ namespace TPWinForm_equipo_H
             frmCategorias ventana = new frmCategorias();
             ventana.ShowDialog();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
