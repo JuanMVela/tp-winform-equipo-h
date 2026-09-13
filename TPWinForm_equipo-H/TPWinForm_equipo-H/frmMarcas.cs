@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using negocio;
 
 namespace TPWinForm_equipo_H
 {
@@ -13,6 +14,21 @@ namespace TPWinForm_equipo_H
         public frmMarcas()
         {
             InitializeComponent();
+        }
+
+        private void frmMarcas_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+
+            try
+            {
+                dgvMarcas.DataSource = negocio.listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }
