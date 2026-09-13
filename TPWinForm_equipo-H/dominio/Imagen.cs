@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPWinForm_equipo_H
+namespace dominio
 {
-    internal class Imagen
+    public class Imagen
     {
         public int Id { get; set; }
         public int IdArticulo { get; set; }
