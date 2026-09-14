@@ -45,13 +45,13 @@
             // 
             // dgvArticulos
             // 
-            dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvArticulos.Location = new Point(28, 79);
+            dgvArticulos.Location = new Point(33, 108);
             dgvArticulos.MultiSelect = false;
             dgvArticulos.Name = "dgvArticulos";
             dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvArticulos.Size = new Size(240, 150);
+            dgvArticulos.Size = new Size(612, 225);
             dgvArticulos.TabIndex = 1;
             // 
             // frmArticulos
@@ -63,6 +63,7 @@
             Controls.Add(lblTitulo);
             Name = "frmArticulos";
             Text = "frmArticulos";
+            Load += frmArticulos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).EndInit();
             ResumeLayout(false);
             PerformLayout();

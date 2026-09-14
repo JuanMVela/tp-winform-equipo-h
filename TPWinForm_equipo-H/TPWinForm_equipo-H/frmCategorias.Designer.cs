@@ -34,8 +34,9 @@
             // 
             // dgvCategorias
             // 
+            dgvCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategorias.Location = new Point(130, 159);
+            dgvCategorias.Location = new Point(43, 61);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.Size = new Size(240, 150);
             dgvCategorias.TabIndex = 0;
