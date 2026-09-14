@@ -34,5 +34,11 @@ namespace TPWinForm_equipo_H
         {
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaArticulo alta = new frmAltaArticulo();
+            alta.ShowDialog();
+        }
     }
 }
