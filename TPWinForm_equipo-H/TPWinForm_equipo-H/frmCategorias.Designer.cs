@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmCategorias";
+            dgvCategorias = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvCategorias
+            // 
+            dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategorias.Location = new Point(130, 159);
+            dgvCategorias.Name = "dgvCategorias";
+            dgvCategorias.Size = new Size(240, 150);
+            dgvCategorias.TabIndex = 0;
+            // 
+            // frmCategorias
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgvCategorias);
+            Name = "frmCategorias";
+            Text = "frmCategorias";
+            Load += frmCategorias_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvCategorias;
     }
 }
