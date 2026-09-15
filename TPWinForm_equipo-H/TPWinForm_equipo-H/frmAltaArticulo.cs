@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using dominio;
 using negocio;
 
 namespace TPWinForm_equipo_H
@@ -35,6 +36,31 @@ namespace TPWinForm_equipo_H
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Articulo articulo = new Articulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Marca = (Marca)cboMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                negocio.agregar(articulo);
+
+                MessageBox.Show("Agregado exitosamente");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
