@@ -32,6 +32,7 @@
             dgvArticulos = new DataGridView();
             btnAgregar = new Button();
             btnModificar = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
@@ -77,11 +78,22 @@
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(224, 365);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 4;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
             // frmArticulos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvArticulos);
@@ -100,5 +112,6 @@
         private DataGridView dgvArticulos;
         private Button btnAgregar;
         private Button btnModificar;
+        private Button btnEliminar;
     }
 }
