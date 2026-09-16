@@ -48,6 +48,7 @@
             // 
             dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvArticulos.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvArticulos.Location = new Point(33, 108);
             dgvArticulos.MultiSelect = false;
             dgvArticulos.Name = "dgvArticulos";

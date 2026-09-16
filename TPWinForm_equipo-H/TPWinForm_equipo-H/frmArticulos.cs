@@ -18,6 +18,10 @@ namespace TPWinForm_equipo_H
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+        private void cargar()
+        {
             ArticuloNegocio negocio = new ArticuloNegocio();
 
             try
@@ -29,16 +33,18 @@ namespace TPWinForm_equipo_H
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        //Se creo por error el FILL-----------------------------
         private void fill(object sender, DataGridViewAutoSizeColumnsModeEventArgs e)
         {
 
         }
-
+        //Se creo por error el FILL-----------------------------
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            cargar();
+
         }
     }
 }

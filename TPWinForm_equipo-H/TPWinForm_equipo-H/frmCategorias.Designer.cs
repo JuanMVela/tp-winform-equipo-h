@@ -38,7 +38,7 @@
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategorias.Location = new Point(43, 61);
             dgvCategorias.Name = "dgvCategorias";
-            dgvCategorias.Size = new Size(240, 150);
+            dgvCategorias.Size = new Size(475, 176);
             dgvCategorias.TabIndex = 0;
             // 
             // frmCategorias
