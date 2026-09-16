@@ -33,6 +33,8 @@
             btnAgregar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
+            lblFiltro = new Label();
+            txtFiltro = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(33, 365);
+            btnAgregar.Location = new Point(33, 391);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 2;
@@ -70,7 +72,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(128, 365);
+            btnModificar.Location = new Point(124, 391);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 3;
@@ -80,7 +82,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(224, 365);
+            btnEliminar.Location = new Point(214, 391);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 4;
@@ -88,11 +90,30 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // lblFiltro
+            // 
+            lblFiltro.AutoSize = true;
+            lblFiltro.Location = new Point(36, 347);
+            lblFiltro.Name = "lblFiltro";
+            lblFiltro.Size = new Size(45, 15);
+            lblFiltro.TabIndex = 5;
+            lblFiltro.Text = "Buscar:";
+            // 
+            // txtFiltro
+            // 
+            txtFiltro.Location = new Point(87, 344);
+            txtFiltro.Name = "txtFiltro";
+            txtFiltro.Size = new Size(202, 23);
+            txtFiltro.TabIndex = 6;
+            txtFiltro.TextChanged += txtFiltro_TextChanged;
+            // 
             // frmArticulos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtFiltro);
+            Controls.Add(lblFiltro);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
@@ -113,5 +134,7 @@
         private Button btnAgregar;
         private Button btnModificar;
         private Button btnEliminar;
+        private Label lblFiltro;
+        private TextBox txtFiltro;
     }
 }

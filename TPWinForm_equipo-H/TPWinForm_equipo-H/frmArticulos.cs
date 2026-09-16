@@ -1,17 +1,18 @@
-﻿using dominio;
-using negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace TPWinForm_equipo_H
 {
     public partial class frmArticulos : Form
     {
+        private List<Articulo> listaArticulos;
         public frmArticulos()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace TPWinForm_equipo_H
 
             try
             {
-                dgvArticulos.DataSource = negocio.listar();
+                listaArticulos = negocio.listar();
+                dgvArticulos.DataSource = listaArticulos;
             }
             catch (Exception ex)
             {
@@ -87,6 +89,30 @@ namespace TPWinForm_equipo_H
             {
                 MessageBox.Show(ex.ToString());
             }
+
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = txtFiltro.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltrada = listaArticulos.FindAll(
+                    x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
+                         x.Codigo.ToUpper().Contains(filtro.ToUpper()) ||
+                         x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) ||
+                         x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper())
+                );
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
 
         }
     }
