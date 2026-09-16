@@ -35,9 +35,9 @@
             // dgvMarcas
             // 
             dgvMarcas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMarcas.Location = new Point(149, 206);
+            dgvMarcas.Location = new Point(38, 41);
             dgvMarcas.Name = "dgvMarcas";
-            dgvMarcas.Size = new Size(240, 150);
+            dgvMarcas.Size = new Size(438, 186);
             dgvMarcas.TabIndex = 0;
             // 
             // frmMarcas

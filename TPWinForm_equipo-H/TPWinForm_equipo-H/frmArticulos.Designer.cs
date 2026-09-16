@@ -31,6 +31,7 @@
             lblTitulo = new Label();
             dgvArticulos = new DataGridView();
             btnAgregar = new Button();
+            btnModificar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvArticulos).BeginInit();
             SuspendLayout();
             // 
@@ -66,11 +67,22 @@
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(128, 365);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 3;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
+            // 
             // frmArticulos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvArticulos);
             Controls.Add(lblTitulo);
@@ -87,5 +99,6 @@
         private Label lblTitulo;
         private DataGridView dgvArticulos;
         private Button btnAgregar;
+        private Button btnModificar;
     }
 }
