@@ -36,6 +36,10 @@
             lblCategoriaValor = new Label();
             lblPrecioValor = new Label();
             btnCerrar = new Button();
+            pbxImagen = new PictureBox();
+            btnAnterior = new Button();
+            btnSiguiente = new Button();
+            ((System.ComponentModel.ISupportInitialize)pbxImagen).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -104,7 +108,7 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.Location = new Point(145, 276);
+            btnCerrar.Location = new Point(20, 318);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(75, 23);
             btnCerrar.TabIndex = 7;
@@ -112,11 +116,43 @@
             btnCerrar.UseVisualStyleBackColor = true;
             btnCerrar.Click += btnCerrar_Click;
             // 
+            // pbxImagen
+            // 
+            pbxImagen.Location = new Point(177, 75);
+            pbxImagen.Name = "pbxImagen";
+            pbxImagen.Size = new Size(175, 173);
+            pbxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxImagen.TabIndex = 8;
+            pbxImagen.TabStop = false;
+            // 
+            // btnAnterior
+            // 
+            btnAnterior.Location = new Point(177, 262);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(75, 23);
+            btnAnterior.TabIndex = 9;
+            btnAnterior.Text = "Anterior";
+            btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
+            // 
+            // btnSiguiente
+            // 
+            btnSiguiente.Location = new Point(277, 262);
+            btnSiguiente.Name = "btnSiguiente";
+            btnSiguiente.Size = new Size(75, 23);
+            btnSiguiente.TabIndex = 10;
+            btnSiguiente.Text = "Siguiente";
+            btnSiguiente.UseVisualStyleBackColor = true;
+            btnSiguiente.Click += btnSiguiente_Click;
+            // 
             // frmDetalleArticulo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(677, 426);
+            Controls.Add(btnSiguiente);
+            Controls.Add(btnAnterior);
+            Controls.Add(pbxImagen);
             Controls.Add(btnCerrar);
             Controls.Add(lblPrecioValor);
             Controls.Add(lblCategoriaValor);
@@ -128,6 +164,7 @@
             Name = "frmDetalleArticulo";
             Text = "frmDetalleArticulo";
             Load += frmDetalleArticulo_Load;
+            ((System.ComponentModel.ISupportInitialize)pbxImagen).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +179,8 @@
         private Label lblCategoriaValor;
         private Label lblPrecioValor;
         private Button btnCerrar;
+        private PictureBox pbxImagen;
+        private Button btnAnterior;
+        private Button btnSiguiente;
     }
 }
