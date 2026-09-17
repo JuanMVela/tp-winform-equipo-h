@@ -127,6 +127,7 @@
             Controls.Add(lblTitulo);
             Name = "frmDetalleArticulo";
             Text = "frmDetalleArticulo";
+            Load += frmDetalleArticulo_Load;
             ResumeLayout(false);
             PerformLayout();
         }
