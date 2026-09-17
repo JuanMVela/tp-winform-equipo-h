@@ -141,6 +141,7 @@
             cboCampo.Name = "cboCampo";
             cboCampo.Size = new Size(121, 23);
             cboCampo.TabIndex = 9;
+            cboCampo.SelectedIndexChanged += cboCampo_SelectedIndexChanged;
             // 
             // cboCriterio
             // 
@@ -174,6 +175,7 @@
             btnBuscar.TabIndex = 13;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnDetalle
             // 
