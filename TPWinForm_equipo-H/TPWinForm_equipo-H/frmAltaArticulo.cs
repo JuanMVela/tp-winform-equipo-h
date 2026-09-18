@@ -103,10 +103,20 @@ namespace TPWinForm_equipo_H
                 else
                 {
                     negocio.agregar(articulo);
-                    MessageBox.Show("Agregado exitosamente");
-                }
 
-                Close();
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+                    for (int i = 0; i < imagenes.Count; i++)
+                    {
+                        imagenes[i].IdArticulo = articulo.Id;
+                        imagenNegocio.agregar(imagenes[i]);
+                    }
+
+                    MessageBox.Show("Agregado exitosamente");
+
+
+                    Close();
+                }
             }
             catch (Exception ex)
             {

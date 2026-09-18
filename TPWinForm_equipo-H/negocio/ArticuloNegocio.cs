@@ -65,7 +65,8 @@ namespace negocio
                 datos.setearConsulta(
                     "Insert into ARTICULOS " +
                     "(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " +
-                    "values (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @precio)"
+                    "values (@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @precio); " +
+                    "Select CAST(SCOPE_IDENTITY() AS int) AS Id"
                 );
 
                 datos.setearParametro("@codigo", nuevo.Codigo);
@@ -75,7 +76,12 @@ namespace negocio
                 datos.setearParametro("@idCategoria", nuevo.Categoria.Id);
                 datos.setearParametro("@precio", nuevo.Precio);
 
-                datos.ejecutarAccion();
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    nuevo.Id = (int)datos.Lector["Id"];
+                }
             }
             catch (Exception ex)
             {
