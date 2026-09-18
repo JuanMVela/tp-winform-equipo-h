@@ -42,6 +42,13 @@
             cboMarca = new ComboBox();
             cboCategoria = new ComboBox();
             txtPrecio = new TextBox();
+            lblImágenes = new Label();
+            lstImagenes = new ListBox();
+            txtImagenUrl = new TextBox();
+            btnAgregarImagen = new Button();
+            btnQuitarImagen = new Button();
+            pbxImagen = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbxImagen).BeginInit();
             SuspendLayout();
             // 
             // lblCodigo
@@ -164,11 +171,71 @@
             txtPrecio.Size = new Size(121, 23);
             txtPrecio.TabIndex = 13;
             // 
+            // lblImágenes
+            // 
+            lblImágenes.AutoSize = true;
+            lblImágenes.Location = new Point(400, 21);
+            lblImágenes.Name = "lblImágenes";
+            lblImágenes.Size = new Size(58, 15);
+            lblImágenes.TabIndex = 14;
+            lblImágenes.Text = "Imágenes";
+            // 
+            // lstImagenes
+            // 
+            lstImagenes.FormattingEnabled = true;
+            lstImagenes.Location = new Point(465, 21);
+            lstImagenes.Name = "lstImagenes";
+            lstImagenes.Size = new Size(153, 94);
+            lstImagenes.TabIndex = 15;
+            lstImagenes.SelectedIndexChanged += lstImagenes_SelectedIndexChanged;
+            // 
+            // txtImagenUrl
+            // 
+            txtImagenUrl.Location = new Point(465, 126);
+            txtImagenUrl.Name = "txtImagenUrl";
+            txtImagenUrl.Size = new Size(153, 23);
+            txtImagenUrl.TabIndex = 16;
+            // 
+            // btnAgregarImagen
+            // 
+            btnAgregarImagen.Location = new Point(465, 166);
+            btnAgregarImagen.Name = "btnAgregarImagen";
+            btnAgregarImagen.Size = new Size(153, 23);
+            btnAgregarImagen.TabIndex = 17;
+            btnAgregarImagen.Text = "Agregar Imagen";
+            btnAgregarImagen.UseVisualStyleBackColor = true;
+            btnAgregarImagen.Click += btnAgregarImagen_Click;
+            // 
+            // btnQuitarImagen
+            // 
+            btnQuitarImagen.Location = new Point(635, 166);
+            btnQuitarImagen.Name = "btnQuitarImagen";
+            btnQuitarImagen.Size = new Size(153, 23);
+            btnQuitarImagen.TabIndex = 18;
+            btnQuitarImagen.Text = "Quitar Imagen";
+            btnQuitarImagen.UseVisualStyleBackColor = true;
+            btnQuitarImagen.Click += btnQuitarImagen_Click;
+            // 
+            // pbxImagen
+            // 
+            pbxImagen.Location = new Point(635, 21);
+            pbxImagen.Name = "pbxImagen";
+            pbxImagen.Size = new Size(153, 139);
+            pbxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxImagen.TabIndex = 19;
+            pbxImagen.TabStop = false;
+            // 
             // frmAltaArticulo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pbxImagen);
+            Controls.Add(btnQuitarImagen);
+            Controls.Add(btnAgregarImagen);
+            Controls.Add(txtImagenUrl);
+            Controls.Add(lstImagenes);
+            Controls.Add(lblImágenes);
             Controls.Add(txtPrecio);
             Controls.Add(cboCategoria);
             Controls.Add(cboMarca);
@@ -186,6 +253,7 @@
             Name = "frmAltaArticulo";
             Text = "frmAltaArticulo";
             Load += frmAltaArticulo_Load;
+            ((System.ComponentModel.ISupportInitialize)pbxImagen).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +274,11 @@
         private ComboBox cboMarca;
         private ComboBox cboCategoria;
         private TextBox txtPrecio;
+        private Label lblImágenes;
+        private ListBox lstImagenes;
+        private TextBox txtImagenUrl;
+        private Button btnAgregarImagen;
+        private Button btnQuitarImagen;
+        private PictureBox pbxImagen;
     }
 }

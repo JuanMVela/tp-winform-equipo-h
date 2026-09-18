@@ -13,6 +13,7 @@ namespace TPWinForm_equipo_H
     public partial class frmAltaArticulo : Form
     {
         private Articulo articulo = null;
+        private List<Imagen> imagenes = new List<Imagen>();
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -47,6 +48,13 @@ namespace TPWinForm_equipo_H
 
                     cboMarca.SelectedValue = articulo.Marca.Id;
                     cboCategoria.SelectedValue = articulo.Categoria.Id;
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+                    imagenes = imagenNegocio.listarPorArticulo(articulo.Id);
+
+                    lstImagenes.DataSource = imagenes;
+                    lstImagenes.DisplayMember = "ImagenUrl";
                 }
             }
             catch (Exception ex)
@@ -79,6 +87,17 @@ namespace TPWinForm_equipo_H
                 if (articulo.Id != 0)
                 {
                     negocio.modificar(articulo);
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+                    imagenNegocio.eliminarPorArticulo(articulo.Id);
+
+                    for (int i = 0; i < imagenes.Count; i++)
+                    {
+                        imagenes[i].IdArticulo = articulo.Id;
+                        imagenNegocio.agregar(imagenes[i]);
+                    }
+
                     MessageBox.Show("Modificado exitosamente");
                 }
                 else
@@ -92,6 +111,70 @@ namespace TPWinForm_equipo_H
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void lstImagenes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstImagenes.SelectedItem != null)
+            {
+                Imagen seleccionada = (Imagen)lstImagenes.SelectedItem;
+
+                cargarImagen(seleccionada.ImagenUrl);
+            }
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxImagen.Load(imagen);
+            }
+            catch
+            {
+                pbxImagen.Image = null;
+            }
+        }
+        private void actualizarListaImagenes()
+        {
+            lstImagenes.DataSource = null;
+            lstImagenes.DataSource = imagenes;
+            lstImagenes.DisplayMember = "ImagenUrl";
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if (txtImagenUrl.Text != "")
+            {
+                Imagen nueva = new Imagen();
+
+                nueva.ImagenUrl = txtImagenUrl.Text;
+
+                if (articulo != null)
+                {
+                    nueva.IdArticulo = articulo.Id;
+                }
+
+                imagenes.Add(nueva);
+
+                actualizarListaImagenes();
+
+                lstImagenes.SelectedIndex = imagenes.Count - 1;
+
+                txtImagenUrl.Clear();
+            }
+        }
+
+        private void btnQuitarImagen_Click(object sender, EventArgs e)
+        {
+            if (lstImagenes.SelectedItem != null)
+            {
+                Imagen seleccionada = (Imagen)lstImagenes.SelectedItem;
+
+                imagenes.Remove(seleccionada);
+
+                actualizarListaImagenes();
+
+                pbxImagen.Image = null;
             }
         }
     }
