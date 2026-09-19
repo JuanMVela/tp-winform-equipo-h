@@ -32,15 +32,19 @@
             txtDescripcion = new TextBox();
             btnAgregar = new Button();
             btnModificar = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvMarcas).BeginInit();
             SuspendLayout();
             // 
             // dgvMarcas
             // 
             dgvMarcas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMarcas.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvMarcas.Location = new Point(38, 41);
+            dgvMarcas.MultiSelect = false;
             dgvMarcas.Name = "dgvMarcas";
-            dgvMarcas.Size = new Size(438, 186);
+            dgvMarcas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMarcas.Size = new Size(348, 175);
             dgvMarcas.TabIndex = 0;
             // 
             // txtDescripcion
@@ -70,11 +74,22 @@
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(407, 242);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 4;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
             // frmMarcas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(txtDescripcion);
@@ -93,5 +108,6 @@
         private TextBox txtDescripcion;
         private Button btnAgregar;
         private Button btnModificar;
+        private Button btnEliminar;
     }
 }

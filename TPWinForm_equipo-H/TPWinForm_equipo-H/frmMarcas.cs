@@ -98,5 +98,54 @@ namespace TPWinForm_equipo_H
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+
+            try
+            {
+                if (dgvMarcas.CurrentRow != null &&
+                    dgvMarcas.CurrentRow.DataBoundItem != null)
+                {
+                    Marca seleccionada;
+
+                    seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                    if (negocio.estaEnUso(seleccionada.Id))
+                    {
+                        MessageBox.Show(
+                            "No se puede eliminar la marca porque está siendo utilizada por un artículo."
+                        );
+                    }
+                    else
+                    {
+                        DialogResult respuesta = MessageBox.Show(
+                            "¿De verdad querés eliminar la marca?",
+                            "Eliminando",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Warning
+                        );
+
+                        if (respuesta == DialogResult.Yes)
+                        {
+                            negocio.eliminar(seleccionada.Id);
+
+                            MessageBox.Show("Marca eliminada exitosamente");
+
+                            cargar();
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccioná una marca para eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
